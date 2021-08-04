@@ -9,10 +9,10 @@ requirements:
 baseCommand: curl
 arguments:
 - -s
-- valueFrom: ${ return inputs.stac_item; }
+- $(inputs.stac_item)
 - "|"
 - jq
-- valueFrom: ${ return ".assets." + inputs.asset + ".href"; }
+- .assets.$inputs.asset).href
 - "|"
 - tr 
 - -d
