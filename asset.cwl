@@ -12,7 +12,7 @@ arguments:
 - $(inputs.stac_item)
 - "|"
 - jq
-- .assets.$inputs.asset).href
+- .assets.$(inputs.asset).href
 - "|"
 - tr 
 - -d
